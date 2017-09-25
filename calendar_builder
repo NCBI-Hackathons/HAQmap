@@ -1,0 +1,61 @@
+#
+#
+#This is a calender builder for NCBI-style #hackathon.  Enter your desired start date and #you will receive a calendar with prep tasks. 
+#
+#
+
+library(shiny)
+
+# Define UI for application that draws a histogram
+ui <- fluidPage(
+   
+   # Application title
+   titlePanel("NCBI-Style Hackathon Calendar Builder"),
+   
+   # Sidebar with calendar input
+   sidebarLayout(
+      sidebarPanel(dateInput(
+        'date',
+        label = 'Select the first day for your hackathon',
+        value = NULL,
+        min= Sys.Date()
+      )
+      ),
+      
+      # Display the calendar
+      mainPanel(
+        textOutput("dateText"),
+        uiOutput("table")
+      )
+   )
+)
+
+# Create the server that builds the calendar
+server <- function(input, output) {
+
+  output$dateText <- renderText({
+    paste("You have selected", as.character(input$date), "as the start date for your hackathon.", "\n")
+  })
+  
+  Data = reactive({
+    if (input$date > 0) {
+      r1 <- c(as.character(input$date + 60), "Task 1", "Person person", "Super damn essential")
+      r2 <- c(as.character(input$date + 30), "Task 2", "Other person", "Meh whatever")
+      df <- rbind(r1, r2)
+      names(df) <- c("Date", "Task", "Person Responsible", "Importance")
+      return(list(df=df))
+    }
+  })
+  
+  output$table <- renderTable({
+    if (is.null(Data())) {return()}
+    print(Data()$df)
+  }, 'include.rownames' = FALSE
+  , 'include.colnames' = TRUE
+  )
+  
+}
+
+# Run the application 
+shinyApp(ui = ui, server = server)
+
