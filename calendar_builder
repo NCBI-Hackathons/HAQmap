@@ -16,7 +16,7 @@ ui <- fluidPage(
    sidebarLayout(
       sidebarPanel(dateInput(
         'date',
-        label = 'Select the first day for your hackathon',
+        label = 'Select the first day for your hackathon.',
         value = NULL,
         min= Sys.Date()
       )
@@ -25,7 +25,7 @@ ui <- fluidPage(
       # Display the calendar
       mainPanel(
         textOutput("dateText"),
-        uiOutput("table")
+        DT::dataTableOutput('tbl')
       )
    )
 )
@@ -39,21 +39,18 @@ server <- function(input, output) {
   
   Data = reactive({
     if (input$date > 0) {
-      r1 <- c(as.character(input$date + 60), "Task 1", "Person person", "Super damn essential")
-      r2 <- c(as.character(input$date + 30), "Task 2", "Other person", "Meh whatever")
-      df <- rbind(r1, r2)
+      r1 <- c(as.character(input$date - 60), "Recruit team leads", "Host", "Super damn essential")
+      r2 <- c(as.character(input$date - 30), "Task 2", "Other person", "Meh whatever")
+      r3 <- c(as.character(input$date - 15), "Task 3", "Other person", "Meh whatever")
+      df <- rbind(r1, r2, r3)
       names(df) <- c("Date", "Task", "Person Responsible", "Importance")
       return(list(df=df))
     }
   })
   
-  output$table <- renderTable({
-    if (is.null(Data())) {return()}
-    print(Data()$df)
-  }, 'include.rownames' = FALSE
-  , 'include.colnames' = TRUE
+  output$tbl = DT::renderDataTable(
+    Data()$df, options = list(dom = 't'), rownames = FALSE
   )
-  
 }
 
 # Run the application 
