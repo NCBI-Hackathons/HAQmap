@@ -1,2 +1,4 @@
-# InstantHackathon
-A Push Button Solution for Setting up an NCBI-style Hackathon
+# The NCBI Style Hackathon Organizer Guide
+
+Welcome to the NCBI Style Hackathon Organizer Guide! 
+
