@@ -64,10 +64,13 @@ server <- function(input, output) {
   output$create <- renderText({
     input$goButton
     if (input$goButton > 0) {
-      folder <- googledrive::drive_mkdir("Hackathon", starred = TRUE)
-      foo <- googlesheets::gs_new("foo", ws_title = "calendar", input = Data()$df)
-      file <- drive_mv("foo", path = "Hackathon", name = "Calendar")
-      
+      require(googledrive)
+      path <- paste("Hackathon_", input$date, sep="")
+      folder <- drive_mkdir(path, starred = TRUE)
+      calendar <- googlesheets::gs_new("calendar", ws_title = "calendar", input = Data()$df)
+      file <- drive_mv("calendar", path = path, name = "Calendar")
+      template <- drive_cp(file = as_id("https://docs.google.com/document/d/14DycE62xpFncUr5hP-D4hBf3AFirJGh0uAgBRjevnt8/edit"), path = path, name = "Manuscript Template")
+      application <- drive_cp(as_id("https://docs.google.com/forms/d/1RaEd70m_2Y4--rPzjTLHpYrT7B8a1nWqpjorLBFUhQU/"), path = path, name = "Application Form")
       print("Your hackathon has been created!")
     }
   })
