@@ -1,12 +1,12 @@
 #
 #
-#This is a calender builder for NCBI-style #hackathon.  Enter your desired start date and #you will receive a calendar with prep tasks. 
+#This is a calender builder for NCBI-style hackathons.  Enter your desired start date and you will receive a calendar with prep tasks. 
 #
 #
 
 library(shiny)
 
-# Define UI for application that draws a histogram
+# Define UI 
 ui <- fluidPage(
    
    # Application title
