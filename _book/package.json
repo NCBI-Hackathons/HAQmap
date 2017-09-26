@@ -1,0 +1,14 @@
+{
+  "name": "my-awesome-package",
+  "version": "1.0.0",
+  "description": "The best package you will ever find.",
+  "main": "index.js",
+  "repository": "https://github.com/NCBI-Hackathons/HAQmap.git",
+  "author": "lizamos <amos.a.elizabeth@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-load-plugins": "^1.5.0"
+  }
+}
