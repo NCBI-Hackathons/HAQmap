@@ -19,12 +19,14 @@ ui <- fluidPage(
         label = 'Select the first day for your hackathon.',
         value = NULL,
         min= Sys.Date()
-      )
+      ),
+      actionButton("goButton", "Create my hackathon!"),
+      textOutput("create")
       ),
       
       # Display the calendar
       mainPanel(
-        textOutput("dateText"),
+        tags$h4(textOutput("dateText")),
         DT::dataTableOutput('tbl')
       )
    )
@@ -33,10 +35,12 @@ ui <- fluidPage(
 # Create the server that builds the calendar
 server <- function(input, output) {
 
+  #print the start date of the hackathon
   output$dateText <- renderText({
     paste("You have selected", as.character(input$date), "as the start date for your hackathon.", "\n")
   })
-  
+
+  #create the data frame with the calendar  
   Data = reactive({
     if (input$date > 0) {
       r1 <- c(as.character(input$date - 60), "Recruit team leads", "Host", "Super damn essential")
@@ -51,6 +55,25 @@ server <- function(input, output) {
   output$tbl = DT::renderDataTable(
     Data()$df, options = list(dom = 't'), rownames = FALSE
   )
+  
+  #print the waiting message
+  
+  
+  
+  #create the google drive folder and populate it
+  output$create <- renderText({
+    input$goButton
+    if (input$goButton > 0) {
+      folder <- googledrive::drive_mkdir("Hackathon", starred = TRUE)
+      foo <- googlesheets::gs_new("foo", ws_title = "calendar", input = Data()$df)
+      file <- drive_mv("foo", path = "Hackathon", name = "Calendar")
+      
+      print("Your hackathon has been created!")
+    }
+  })
+  
+  
+  
 }
 
 # Run the application 
