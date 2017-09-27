@@ -56,6 +56,31 @@ server <- function(input, output, session) {
       for (i in 1:nrow(names)){
         drive_cp(file = as_id(names$id[i]), path = as_id(path_id), name = names$name[i])
       }
+<<<<<<< HEAD
+=======
+      
+    
+      
+      
+      
+      
+      #template <- drive_cp(file = as_id("https://docs.google.com/document/d/14DycE62xpFncUr5hP-D4hBf3AFirJGh0uAgBRjevnt8/edit"), path = path, name = "Manuscript Template")
+      #application <- drive_cp(as_id("https://docs.google.com/forms/d/1RaEd70m_2Y4--rPzjTLHpYrT7B8a1nWqpjorLBFUhQU/"), path = path, name = "Application Form")
+      #create the sheet that collects the application form data
+      #roster <- drive_cp(as_id("https://docs.google.com/spreadsheets/d/1oxTEwplhi2BuARmXkG2HFfFRV4wjx23uWumThZdmm0o/edit#gid=1999195006"), path = path, name = "Master Sheet")  
+      
+      # the calendar sheet key is accessed by calendar$sheet_key
+      print(path)
+      new_files <- drive_ls(path)
+      print(new_files)
+      masterSheetKey <- new_files[which(new_files$name=="Application_form (Responses)"),2][[1]][1]
+      masterSheet <- gs_key(masterSheetKey)
+      masterSheet %>% gs_ws_new(ws_title = "FILE_IDS", input=new_files[,1:2], trim=TRUE, verbose=TRUE)
+      masterSheet %>% gs_ws_new(ws_title = "CALENDAR", input=Data()$df, trim=TRUE, verbose=TRUE)
+      
+      
+      
+>>>>>>> 9422acac7de6d37734f34197bdd2971744866858
       print("Your hackathon kit has been created!")
     }
   })
