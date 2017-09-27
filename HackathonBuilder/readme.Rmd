@@ -1,8 +1,4 @@
----
-title: "README"
-output: html_document
----
-
+## HackathonBuilder
 This Shiny app creates a push-button solution to creating a "hackathon starter kit."  Your kit will contain:
 * a planning calendar containing tasks to be done in advance of your hackathon, based on your desired start date
 * a form to accept applications from prospective participants
