@@ -1,0 +1,13 @@
+name: Hackathon_builder
+title: Hackathon_builder
+username:
+account: purplegenie
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 219393
+bundleId: 1000160
+url: https://purplegenie.shinyapps.io/Hackathon_builder/
+when: 1506531861.53774
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: .httr-oauth|gs_auth
