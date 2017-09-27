@@ -5,7 +5,7 @@ This guide will contain information and tools to help organizers create their ow
 ![HAQmap flow diagram](HAQmap_flow_diagram.png)
 
 ## Tools in the kit
-### ![HackathonBuilder] (https://purplegenie.shinyapps.io/Hackathon_builder/)
+### [HackathonBuilder](https://purplegenie.shinyapps.io/Hackathon_builder/)
 This Shiny app creates a push-button solution to creating a "hackathon starter kit."  Your kit will contain:
 * a planning calendar containing tasks to be done in advance of your hackathon, based on your desired start date
 * a form to accept applications from prospective participants
@@ -13,7 +13,7 @@ This Shiny app creates a push-button solution to creating a "hackathon starter k
 * a manuscript template for writing hackathon manuscripts
 * and more, coming soon!
 
-When this app is done, you'll be able to log in through Google and your kit will be created for you in a new Google Drive folder. Please note that as of now this app only works locally, but feel free to check out the in-progress version on ![shinyapps.io] (https://purplegenie.shinyapps.io/Hackathon_builder/).
+When this app is done, you'll be able to log in through Google and your kit will be created for you in a new Google Drive folder. Please note that as of now this app only works locally, but feel free to check out the in-progress version on [shinyapps.io](https://purplegenie.shinyapps.io/Hackathon_builder/).
 
 ### SlackBuilder
 This Shiny app will automate the process of populating a Slack workspace with users and creating channels for each team.
