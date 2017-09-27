@@ -13,13 +13,13 @@
    * [Hackathon Calendar of Events](HackathonCalendarofEvents.md)
    * [GitHub Repo](GitHubRepo.md)
    * [Daily Schedule](DailySchedule.md)
-  * [Agenda]
-  * [Application to participate]
-* [Finding Project Leads] (<generate document>)
-  *[Project design considerations] (s10.2)
-  *[Project Creation questions] (s10.1)
-* [Promoting Your Hackathon] (<s8>)
-  *
+   * [Application to participate](ApplicationToParticipate.md)
+* [Finding Project Leads](FindingProjectLeads.md)
+* [Project design considerations](ProjectDesignConsiderations.md)
+* [Project Creation questions](ProjectCreationQuestions.md)
+* [Promoting Your Hackathon](Promotion.md)
+* [Planning for Food](Food.md)
+
 ### [Part Three: Computing and Technical Issues](technological_issues.md)
 * Infrastructure
 
