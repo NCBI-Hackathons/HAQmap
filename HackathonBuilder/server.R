@@ -1,5 +1,5 @@
 server <- function(input, output, session) {
-  rv <- reactiveValues(
+  values <- reactiveValues(
     login = FALSE
   )
   ##PART ONE: Create the calendar
@@ -56,6 +56,8 @@ server <- function(input, output, session) {
       for (i in 1:nrow(names)){
         drive_cp(file = as_id(names$id[i]), path = as_id(path_id), name = names$name[i])
       }
+<<<<<<< HEAD
+=======
       
     
       
@@ -78,7 +80,10 @@ server <- function(input, output, session) {
       
       
       
+>>>>>>> 9422acac7de6d37734f34197bdd2971744866858
       print("Your hackathon kit has been created!")
     }
   })
+  
 }
+  
