@@ -5,4 +5,4 @@ This guide will contain information and tools to help organizers create their ow
 ![HAQmap flow diagram](HAQmap_flow_diagram.png)
 
 ### The HAQmap kit
-![HAQmap kit](HAQmap-kit.png)
+![HAQmap kit](Users/lizamos/Documents/GitHub/HAQmap/HAQmap-kit.png)
