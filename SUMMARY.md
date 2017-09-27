@@ -9,11 +9,10 @@
 ### [Part Two: Planning and Processes](process.md)
 * [Creating a Planning taskforce](PlanningTaskforce.md)
 * [Logistics](Logistics.md)
-* [Templates](<document s4>)
-
-  * [Hackathon Calendar of Events](HackathonCalendarofEvents.md)
-  * [GitHub Repo]
-  * [Daily Schedule
+* [Templates](TemplatesTools.md)
+   * [Hackathon Calendar of Events](HackathonCalendarofEvents.md)
+   * [GitHub Repo](GitHubRepo.md)
+   * [Daily Schedule](DailySchedule.md)
   * [Agenda]
   * [Application to participate]
 * [Finding Project Leads] (<generate document>)
