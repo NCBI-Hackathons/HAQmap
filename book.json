@@ -1,9 +1,12 @@
 {
-  "plugins": ["ga", "custom-favicon"],
+  "plugins": ["ga", "bring-yer-favicon"],
   "pluginsConfig": {
     "ga": { "token": "UA-43729070-9",
-    "favicon": "Users/lizamos/Documents/GitHub/HAQmap/gitbook/images/NCBIHAQmapFavicon.ico"
-  }
+    "favicon": { 
+      "favicon.ico" : "Users/lizamos/Documents/GitHub/HAQmap/gitbook/images/favicon.ico",
+      "apple-touch-icon-precomposed-152.png" : "Users/lizamos/Documents/GitHub/HAQmap/gitbook/images/apple-touch-icon.png"
+              }
+            }
 },
   "styles": { "website": "assets/stylesheets/custom.css" },
   "layout": { "footerPath" : "layouts/footer.html" },
