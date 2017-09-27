@@ -1,5 +1,5 @@
 server <- function(input, output, session) {
-  rv <- reactiveValues(
+  values <- reactiveValues(
     login = FALSE
   )
   ##PART ONE: Create the calendar
@@ -56,17 +56,9 @@ server <- function(input, output, session) {
       for (i in 1:nrow(names)){
         drive_cp(file = as_id(names$id[i]), path = as_id(path_id), name = names$name[i])
       }
-      
-    
-      
-      
-      
-      
-      #template <- drive_cp(file = as_id("https://docs.google.com/document/d/14DycE62xpFncUr5hP-D4hBf3AFirJGh0uAgBRjevnt8/edit"), path = path, name = "Manuscript Template")
-      #application <- drive_cp(as_id("https://docs.google.com/forms/d/1RaEd70m_2Y4--rPzjTLHpYrT7B8a1nWqpjorLBFUhQU/"), path = path, name = "Application Form")
-      #create the sheet that collects the application form data
-      #roster <- drive_cp(as_id("https://docs.google.com/spreadsheets/d/1oxTEwplhi2BuARmXkG2HFfFRV4wjx23uWumThZdmm0o/edit#gid=1999195006"), path = path, name = "Applicant List")  
       print("Your hackathon kit has been created!")
     }
   })
+  
 }
+  
