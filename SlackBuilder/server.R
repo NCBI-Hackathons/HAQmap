@@ -8,8 +8,7 @@ server <- function(input, output, session) {
     if (input$goButton > 0) {
       sheet_id <- gs_url(as.character(input$sheets_url))
       dat <- gs_read(sheet_id, ws = 1, col_names = TRUE)
-      dat <- dat[, c(7, 13)] #gs_read pulls in more than we need - keep just the relevant columns containing email address and team name
-      names(dat) <- c("email", "team")
+      dat <- dat[, c("email", "team")] #gs_read pulls in more than we need - keep just the relevant columns containing email address and team name
       print(paste(length(unique(dat$email)), "people will be invited to your Slack workspace."))
       print(paste(length(unique(dat$team)), "team channels will be created."))
       
