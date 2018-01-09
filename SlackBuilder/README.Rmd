@@ -1,4 +1,4 @@
 ## SlackBuilder
 This Shiny app will automate the process of populating a Slack workspace with users and creating channels for each team.
 
-It takes as input the URL for the Google Sheet containing your team list, in the original format from your HackathonBuilder kit (i.e. it will fail if you're changed the order of or removed any columns in your participant list) and the URL for your Slack workspace (you must create this manually).  It will then send email invitations to users, create channels for each team, and automatically invite users to the channel for their team.  
+It takes as input the URL for the Google Sheet containing your team list, with columns named email and team (case-sensitive), and the API token for your Slack workspace (you must create the workspace manually first and get your token from https://api.slack.com/custom-integrations/legacy-tokens).  It will then send email invitations to users, create channels for each team, and automatically invite users to the channel for their team.  
